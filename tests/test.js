@@ -1,6 +1,9 @@
-import { expect, test } from '@playwright/test';
+import { test } from '@playwright/test';
 
-test('index page has expected h1', async ({ page }) => {
-	await page.goto('/');
-	await expect(page.getByRole('heading', { name: 'Welcome to SvelteKit' })).toBeVisible();
+test('test browser', async ({ page }) => {
+	// point this to wherever you want
+	await page.goto('http://localhost:5173/');
+
+	// keep browser open
+	await page.pause();
 });
