@@ -1,3 +1,7 @@
+# media queries
+
+Currently one step ahead of [the CSS spec](https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media), this project already uses custom media queries by transforming them via postcss. all of them are defined in a single file and can be used in any component or style file. the idea is from open-props, but we redefine the queries to be able to change them instead of importing fixed values.
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).

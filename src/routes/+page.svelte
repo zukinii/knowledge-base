@@ -4,5 +4,9 @@
 <style>
 	h1 {
 		color: hsl(var(--gray-9-hsl) / 30%);
+
+		@media (--md-n-above) {
+			color: var(--test-color);
+		}
 	}
 </style>
