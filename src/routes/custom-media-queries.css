@@ -1,3 +1,5 @@
+/* base file from node_modules\open-props\src\props.media.css */
+
 @custom-media --motionOK (prefers-reduced-motion: no-preference);
 @custom-media --motionNotOK (prefers-reduced-motion: reduce);
 @custom-media --opacityOK (prefers-reduced-transparency: no-preference);
