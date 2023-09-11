@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Title</title>
+	<title>{$t('home.title')}</title>
 </svelte:head>
 
 <h1>Welcome to SvelteKit</h1>
