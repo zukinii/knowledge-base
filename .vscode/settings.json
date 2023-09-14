@@ -3,7 +3,7 @@
 	"cssvar.files": [
 		"./node_modules/open-props/open-props.min.css",
 		// "./node_modules/open-props/colors-hsl.min.css",
-		"./src/routes/variables.css"
+		"./src/lib/styles/variables.css"
 	],
 
 	// Do not ignore node_modules css files, which is ignored by default

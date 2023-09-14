@@ -1,5 +1,5 @@
 <script context="module">
-	import './global.css'
+	import '$lib/styles/global.css'
 </script>
 
 <slot />
