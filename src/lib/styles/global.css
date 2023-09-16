@@ -1,1 +1,3 @@
-@import './utilities.css';
+@import './utilities.css' layer(utilities); /* if utilities get too big split them into parts and import those directly on the page they're needed */
+@import './reset.css' layer(reset);
+@import './base.css' layer(base);

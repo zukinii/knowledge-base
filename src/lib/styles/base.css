@@ -1,0 +1,5 @@
+@media (--useDataNotOK) {
+	body {
+		font-family: system-ui; /* TODO: move this to where the font-family is declared in general */
+	}
+}
