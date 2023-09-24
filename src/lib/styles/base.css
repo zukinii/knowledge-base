@@ -3,3 +3,24 @@
 		font-family: system-ui; /* TODO: move this to where the font-family is declared in general */
 	}
 }
+
+@media (prefers-reduced-motion) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
+
+/* @keyframes page-transition {
+	from {
+	}
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+}
+
+::view-transition-new(root) {
+	animation: .5s linear both page-transition;
+} */
