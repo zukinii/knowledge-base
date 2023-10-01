@@ -1,15 +1,39 @@
+@import './container.css';
+@import './typography.css';
+
 @media (--useDataNotOK) {
 	body {
 		font-family: system-ui; /* TODO: move this to where the font-family is declared in general */
 	}
 }
 
-@media (prefers-reduced-motion) {
+@media (--motionNotOK) {
 	::view-transition-group(*),
 	::view-transition-old(*),
 	::view-transition-new(*) {
 		animation: none !important;
 	}
+}
+
+::selection {
+	background-color: var(--brand);
+	color: var(--text-1);
+}
+
+html {
+	color-scheme: light dark;
+	min-height: 100vh;
+
+	@media (--OSdark) {
+		color-scheme: dark;
+	}
+}
+
+svg.iconify {
+	--size: 1.5em;
+
+	width: var(--size);
+	height: var(--size);
 }
 
 /* @keyframes page-transition {

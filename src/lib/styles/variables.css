@@ -1,3 +1,18 @@
 :where(html) {
-	--test-color: green;
+	/* colors */
+	--brand-light: var(--pink-1);
+	--brand-dark: var(--pink-9);
+	--brand: var(--brand-light);
+	--text-1-light: var(--gray-9);
+	--text-1-dark: var(--gray-1);
+	--text-1: var(--text-1-light);
+
+	/* animation */
+	--time-default: 0.2s;
+	--transition: var(--time-default) var(--ease-3);
+
+	@media (--OSdark) {
+		--brand: var(--brand-dark);
+		--text-1: var(--text-1-dark);
+	}
 }
