@@ -1,7 +1,9 @@
-.grid {
+.grid,
+grid {
 	display: grid;
 }
 
-.flex {
+.flex,
+flex {
 	display: flex;
 }
