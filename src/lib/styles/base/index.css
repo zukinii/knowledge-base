@@ -20,6 +20,11 @@
 	color: var(--text-1);
 }
 
+:focus-visible {
+	outline: 2px solid var(--brand);
+	outline-offset: 2px;
+}
+
 html {
 	color-scheme: light dark;
 	min-height: 100vh;

@@ -6,13 +6,20 @@
 	--text-1-light: var(--gray-9);
 	--text-1-dark: var(--gray-1);
 	--text-1: var(--text-1-light);
+	--bg-1-light: var(--gray-1);
+	--bg-1-dark: var(--gray-9);
+	--bg-1: var(--bg-1-light);
 
 	/* animation */
 	--time-default: 0.2s;
 	--transition: var(--time-default) var(--ease-3);
 
+	/* z-index */
+	--layer-skip-link: 50;
+
 	@media (--OSdark) {
 		--brand: var(--brand-dark);
 		--text-1: var(--text-1-dark);
+		--bg-1: var(--bg-1-dark);
 	}
 }
