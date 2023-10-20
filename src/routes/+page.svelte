@@ -20,6 +20,3 @@
 <svelte:head>
 	<title>{$t('home.title')}</title>
 </svelte:head>
-
-<style>
-</style>

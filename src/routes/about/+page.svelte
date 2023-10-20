@@ -1,6 +1,29 @@
 <script>
 	import Accordion from '$lib/components/accordion.svelte'
+	import faqs from './faqs.json'
+
+	const structuredData = {
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		name: 'Frequently Asked Questions',
+		mainEntity: faqs.map(({ question, answer }) => ({
+			'@type': 'Question',
+			name: question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: answer
+			}
+		}))
+	}
+
+	const structuredDataString = `<script type="application/ld+json">${JSON.stringify(
+		structuredData
+	)}<\/script>`
 </script>
+
+<svelte:head>
+	{@html structuredDataString}
+</svelte:head>
 
 <h1>About</h1>
 
@@ -9,7 +32,9 @@
 		<h2>FAQ</h2>
 	</header>
 
-	<Accordion title="What is this?" open>
-		<p>This is a demo of a SvelteKit app with a few pages and a global layout.</p>
-	</Accordion>
+	{#each faqs as faq}
+		<Accordion title={faq.question}>
+			<p>{faq.answer}</p>
+		</Accordion>
+	{/each}
 </section>
