@@ -1,41 +1,63 @@
 <script>
 	import { onMount } from 'svelte'
+	import debounce from '$lib/scripts/utils/debounce'
+	import { prefersReducedMotion } from '$lib/scripts/utils/user-preferences'
 	import Icon from '@iconify/svelte'
 
 	export let title
 	export let open = false
 	let details
+	let summary
 	let content
 
-	// TODO: make open / close animation work
+	const initContentHeight = () => {
+		if (!content) return
+
+		content.style.height = null
+		content.style.height = `${details.open ? content.scrollHeight : 0}px`
+	}
+
+	const toggleContent = () => {
+		const isClosing = !!details.open
+
+		if (isClosing) {
+			// wait for transition since the content is removed once closed
+			const onTransitionEnd = () => {
+				details.open = false
+				details.classList.remove('-closing')
+			}
+
+			content.addEventListener('transitionend', onTransitionEnd, { once: true })
+
+			details.classList.add('-closing')
+			content.style.height = '0px' // trigger transition
+
+			if (prefersReducedMotion()) onTransitionEnd()
+		} else {
+			details.open = true
+			content.style.height = `${content.scrollHeight}px` // trigger transition
+		}
+	}
+
+	const handleSummaryClick = (e) => {
+		// prevent click to manually control the open state
+		e.preventDefault()
+
+		toggleContent()
+	}
+
+	const handleResize = () => initContentHeight()
 
 	onMount(() => {
-		details.addEventListener('toggle', () => {
-			open = details.open
+		initContentHeight()
 
-			// set height to the height of the content. add '-closing' class while closing
-			const isClosing = !open
-
-			if (isClosing) {
-				details.classList.add('-closing')
-
-				content.addEventListener(
-					'transitionend',
-					() => {
-						content.style.height = '0px'
-						details.classList.remove('-closing')
-					},
-					{ once: true }
-				)
-			} else {
-				content.style.height = `${content.scrollHeight}px`
-			}
-		})
+		summary.addEventListener('click', handleSummaryClick)
+		window.addEventListener('resize', debounce(handleResize, 100))
 	})
 </script>
 
 <details {open} bind:this={details}>
-	<summary>
+	<summary bind:this={summary}>
 		<div>{title}</div>
 		<Icon icon="mdi:chevron-down" />
 	</summary>
@@ -47,12 +69,12 @@
 <style>
 	details {
 		--icon-rotate: 0deg;
-		--content-height: 0px;
+
+		overflow: hidden;
 	}
 
-	details[open] {
+	details[open]:not(.-closing) {
 		--icon-rotate: 180deg;
-		--content-height: auto;
 	}
 
 	summary {
@@ -62,22 +84,18 @@
 		justify-content: space-between;
 		gap: var(--size-3);
 		cursor: pointer;
+
+		&:focus {
+			outline-offset: -1px;
+		}
 	}
 
 	summary :global(svg) {
 		transform: rotateX(var(--icon-rotate));
-
-		@media (--motionOK) {
-			transition: transform var(--transition);
-		}
+		transition: transform var(--transition);
 	}
 
 	summary + div {
-		/* height: var(--content-height); */
-		overflow: hidden;
-
-		@media (--motionOK) {
-			transition: height var(--transition);
-		}
+		transition: height var(--transition);
 	}
 </style>

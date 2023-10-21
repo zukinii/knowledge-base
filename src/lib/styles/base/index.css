@@ -33,7 +33,7 @@
 	}
 
 	@media (--motionNotOK) {
-		--transition: none;
+		--time-default: 0s;
 	}
 }
 

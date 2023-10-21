@@ -32,8 +32,8 @@
 		<h2>FAQ</h2>
 	</header>
 
-	{#each faqs as faq}
-		<Accordion title={faq.question}>
+	{#each faqs as faq, i}
+		<Accordion title={faq.question} open={i === 0}>
 			<p>{faq.answer}</p>
 		</Accordion>
 	{/each}
