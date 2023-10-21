@@ -25,6 +25,18 @@
 	outline-offset: 2px;
 }
 
+:root {
+	@media (--OSdark) {
+		--brand: var(--brand-dark);
+		--text-1: var(--text-1-dark);
+		--bg-1: var(--bg-1-dark);
+	}
+
+	@media (--motionNotOK) {
+		--transition: none;
+	}
+}
+
 html {
 	color-scheme: light dark;
 	text-rendering: optimizeLegibility;

@@ -13,7 +13,9 @@ module.exports = {
 				path.resolve(__dirname, 'node_modules/open-props/open-props.min.css'),
 				// path.resolve(__dirname, 'node_modules/open-props/colors-hsl.min.css')
 				path.resolve(__dirname, 'src/lib/styles/variables.css')
-			]
+			],
+			custom_selector: ':root',
+			layer: 'variables'
 		}),
 		postcssGlobalData({
 			// add custom media queries files here
