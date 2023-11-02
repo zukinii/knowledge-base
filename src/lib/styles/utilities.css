@@ -1,9 +1,13 @@
-.grid,
-grid {
+.grid {
 	display: grid;
 }
 
-.flex,
-flex {
+.flex {
 	display: flex;
+}
+
+.truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
