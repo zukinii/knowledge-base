@@ -1,3 +1,4 @@
 {
-	"title": "Homepage Title"
+	"title": "Homepage Title",
+	"welcome": "Welcome {{name}}!"
 }

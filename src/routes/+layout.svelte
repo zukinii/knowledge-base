@@ -2,6 +2,7 @@
 	import '$lib/styles/global.css'
 
 	import { onNavigate } from '$app/navigation'
+	import { onMount } from 'svelte'
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return
@@ -12,6 +13,12 @@
 				await navigation.complete
 			})
 		})
+	})
+
+	onMount(async () => {
+		const { initUserData } = await import('$lib/scripts/user-data')
+
+		initUserData()
 	})
 </script>
 

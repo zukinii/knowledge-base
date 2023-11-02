@@ -1,0 +1,22 @@
+# User Data Structure
+
+- namespaces[]
+  - name
+  - createdDate
+  - lastChangeDate
+  - notes[]
+    - title
+    - content
+    - createdDate
+    - lastChangeDate
+- account
+  - email
+  - createdDate
+  - lastLoginDate
+- user
+  - name
+  - createdDate
+  - lastOpenAppDate
+- settings
+  - lastChangeDate
+  - colorSchemePreference ['system', 'light', 'dark']

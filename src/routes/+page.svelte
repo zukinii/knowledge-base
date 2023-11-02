@@ -1,21 +1,7 @@
 <script>
-	import { onMount } from 'svelte'
 	import { t } from '$lib/translations'
 	import Editor from '$lib/components/editor.svelte'
-
-	let userData = null
-
-	onMount(async () => {
-		if (typeof indexedDB === 'undefined') {
-			console.error('IndexedDB is not available in this environment')
-			return
-		}
-
-		const { getUserData, saveUserData } = await import('$lib/scripts/user-data')
-		await saveUserData({ name: 'John Doe' })
-		userData = await getUserData()
-		console.log(userData)
-	})
+	import { userData } from '$lib/scripts/stores/user-store'
 </script>
 
 <svelte:head>
