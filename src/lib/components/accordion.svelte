@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte'
 	import debounce from '$lib/scripts/utils/debounce'
 	import { prefersReducedMotion } from '$lib/scripts/utils/user-preferences'
-	import Icon from '@iconify/svelte'
+	import Icon from '$lib/components/common/icon.svelte'
 
 	export let title
 	export let open = false
@@ -59,7 +59,7 @@
 <details {open} bind:this={details}>
 	<summary bind:this={summary}>
 		<div>{title}</div>
-		<Icon icon="mdi:chevron-down" />
+		<Icon name="chevron-down" />
 	</summary>
 	<div bind:this={content}>
 		<slot />
@@ -69,12 +69,26 @@
 <style>
 	details {
 		--icon-rotate: 0deg;
+		--indent: var(--size-3);
+		--border-color: var(--border-color-1);
 
 		overflow: hidden;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--size-3);
+		transition: padding var(--transition);
+		border-top: 1px solid var(--border-color);
+
+		&:last-of-type {
+			border-bottom: 1px solid var(--border-color);
+		}
 	}
 
 	details[open]:not(.-closing) {
 		--icon-rotate: 180deg;
+		--indent: 0rem;
+
+		padding-block-end: var(--size-3);
 	}
 
 	summary {
@@ -83,7 +97,14 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--size-3);
+		padding-block: var(--size-3);
+		transition: padding var(--transition);
 		cursor: pointer;
+
+		&:hover,
+		&:focus-visible {
+			padding-inline: var(--indent);
+		}
 
 		&:focus {
 			outline-offset: -1px;
@@ -97,5 +118,12 @@
 
 	summary + div {
 		transition: height var(--transition);
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--size-3);
+	}
+
+	summary + div > :global(:last-child) {
+		margin-bottom: 0;
 	}
 </style>

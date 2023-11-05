@@ -22,7 +22,7 @@ Currently one step ahead of [the CSS spec](https://drafts.csswg.org/mediaqueries
 
 ## icons
 
-uses icons from [iconify](https://icon-sets.iconify.design/)
+uses icons from [iconify](https://icon-sets.iconify.design/). they are downloaded to make them available offline as well. they do not use iconify for svelte to avoid using the iconify api because of its [downsides](https://iconify.design/docs/icons/icon-data).
 
 ## create-svelte
 

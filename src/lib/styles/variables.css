@@ -12,6 +12,9 @@
 	--bg-1-light: var(--gray-1);
 	--bg-1-dark: var(--gray-9);
 	--bg-1: var(--bg-1-light);
+	--border-color-1-light: var(--gray-3);
+	--border-color-1-dark: var(--gray-7);
+	--border-color-1: var(--border-color-1-light);
 
 	/* animation */
 	--time-default: 0.2s;

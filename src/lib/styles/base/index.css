@@ -30,6 +30,7 @@
 		--brand: var(--brand-dark);
 		--text-1: var(--text-1-dark);
 		--bg-1: var(--bg-1-dark);
+		--border-color-1: var(--border-color-1-dark);
 	}
 
 	@media (--motionNotOK) {
@@ -45,13 +46,6 @@ html {
 	@media (--OSdark) {
 		color-scheme: dark;
 	}
-}
-
-svg.iconify {
-	--size: 1.5em;
-
-	width: var(--size);
-	height: var(--size);
 }
 
 /* @keyframes page-transition {

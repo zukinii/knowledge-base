@@ -1,7 +1,7 @@
 <script>
 	import { t } from '$lib/translations'
-	import Editor from '$lib/components/editor.svelte'
 	import { userData } from '$lib/scripts/stores/user-store'
+	import Editor from '$lib/components/editor/editor.svelte'
 </script>
 
 <svelte:head>
