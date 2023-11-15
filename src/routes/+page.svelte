@@ -1,7 +1,7 @@
 <script>
 	import { t } from '$lib/translations'
 	import { userData } from '$lib/scripts/stores/user-store'
-	import Editor from '$lib/components/editor/editor.svelte'
+	import EditPage from '$lib/components/edit-page.svelte'
 </script>
 
 <svelte:head>
@@ -9,7 +9,7 @@
 </svelte:head>
 
 <div>
-	<Editor />
+	<EditPage />
 	{#if userData}
 		<p>{$t('home.welcome', { name: userData.name })}</p>
 	{/if}

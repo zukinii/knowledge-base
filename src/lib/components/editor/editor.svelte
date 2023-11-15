@@ -4,6 +4,13 @@
 </script>
 
 <section>
-	<Editable />
 	<EditorControls />
+	<Editable />
 </section>
+
+<style>
+	section {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+	}
+</style>

@@ -1,14 +1,16 @@
 # User Data Structure
 
+- notes[]
+  - title
+  - content
+  - createdDate
+  - lastChangeDate
+  - namepsaceId
 - namespaces[]
+  - id (0 for the default one, lowest unused number for new ones 1, 2, 3, ...)
   - name
   - createdDate
   - lastChangeDate
-  - notes[]
-    - title
-    - content
-    - createdDate
-    - lastChangeDate
 - account
   - email
   - createdDate
@@ -17,6 +19,7 @@
   - name
   - createdDate
   - lastOpenAppDate
+  - selectedNamespace
 - settings
   - lastChangeDate
   - colorSchemePreference ['system', 'light', 'dark']
