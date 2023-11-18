@@ -6,11 +6,13 @@
   - createdDate
   - lastChangeDate
   - namepsaceId
+  - selected
 - namespaces[]
   - id (0 for the default one, lowest unused number for new ones 1, 2, 3, ...)
   - name
   - createdDate
   - lastChangeDate
+  - selected
 - account
   - email
   - createdDate
@@ -19,7 +21,6 @@
   - name
   - createdDate
   - lastOpenAppDate
-  - selectedNamespace
 - settings
   - lastChangeDate
   - colorSchemePreference ['system', 'light', 'dark']

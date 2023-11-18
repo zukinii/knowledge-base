@@ -1,5 +1,5 @@
 <script>
-	import Accordion from '$lib/components/accordion.svelte'
+	import Accordion from '$lib/components/common/accordion.svelte'
 	import faqs from './faqs.json'
 
 	const structuredData = {

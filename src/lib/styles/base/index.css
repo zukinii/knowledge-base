@@ -1,12 +1,6 @@
 @import './container.css';
 @import './typography.css';
 
-@media (--useDataNotOK) {
-	body {
-		font-family: system-ui; /* TODO: move this to where the font-family is declared in general */
-	}
-}
-
 @media (--motionNotOK) {
 	::view-transition-group(*),
 	::view-transition-old(*),
@@ -27,10 +21,10 @@
 
 :root {
 	@media (--OSdark) {
-		--brand: var(--brand-dark);
-		--text-1: var(--text-1-dark);
-		--bg-1: var(--bg-1-dark);
-		--border-color-1: var(--border-color-1-dark);
+		--brand: var(--pink-9);
+		--text-1: var(--gray-1);
+		--bg-1: var(--gray-9);
+		--border-color-1: var(--gray-7);
 	}
 
 	@media (--motionNotOK) {
@@ -41,15 +35,15 @@
 html {
 	color-scheme: light dark;
 	text-rendering: optimizeLegibility;
-	min-height: 100vh;
-
-	@media (--OSdark) {
-		color-scheme: dark;
-	}
+	min-height: 100dvh;
 }
 
-/* @keyframes page-transition {
+@keyframes page-transition {
 	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }
 
@@ -58,5 +52,5 @@ html {
 }
 
 ::view-transition-new(root) {
-	animation: .5s linear both page-transition;
-} */
+	animation: 0.2s linear both page-transition;
+}

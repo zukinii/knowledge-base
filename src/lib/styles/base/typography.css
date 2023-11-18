@@ -1,5 +1,9 @@
 html {
 	color: var(--text-1);
+
+	@media (--useDataNotOK) {
+		font-family: system-ui;
+	}
 }
 
 h1,
