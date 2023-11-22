@@ -2,6 +2,10 @@
 
 coming soon
 
+# todo
+
+- handle quota exceeded error for indexeddb and cache api
+
 # License
 
 The GNU Affero General Public License (AGPL) allows anyone to view, use, and modify the code, emphasizing openness and collaboration, with the condition that any modifications or derivatives must also be distributed under the AGPL, ensuring continued open source availability. 🚀✨
