@@ -13,6 +13,19 @@ The GNU Affero General Public License (AGPL) allows anyone to view, use, and mod
 # a11y guidelines
 
 - links in text blocks will be underlined
+- provide light and dark mode with enough contrast
+
+# style guide
+
+## dark mode
+
+- [dark mode guide](https://www.youtube.com/watch?v=6U9iC-c15AI)
+- for readability don't use pure black on white (or vice versa) since it can make the text blurry to read, even though it's a high contrast combination. instead use a dark grey on white or a light grey on black
+- instead of just box shadow use a border and some gradients in dark mode since normal shadows don't work as well there
+- for dark mode we usually don't use vivid colors, but try to make them muted (a bit darker and less saturated)
+- minimalism: don't use too many colors if you don't need to. use gaussian blurs, border effects or backgrounds with big text for heroes and keep normal text blocks simple
+- use a lot of white space to make the content more readable
+- lighter backgrounds make something "pop" more than darker ones
 
 # tech
 

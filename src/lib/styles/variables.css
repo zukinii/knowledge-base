@@ -6,6 +6,8 @@
 	--primary: var(--blue-1);
 	--secondary: var(--green-1);
 	--tertiary: var(--yellow-1);
+	--primary-secondary-mix: color-mix(in lch, var(--primary) 40%, var(--secondary) 60%);
+	--primary-light: hsl(from var(--primary) calc(h) s l / 0.5);
 	--success: var(--green-1);
 	--warning: var(--yellow-1);
 	--danger: var(--red-1);

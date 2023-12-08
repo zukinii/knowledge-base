@@ -15,8 +15,10 @@ h6 {
 	margin-block-start: 0;
 	hyphens: auto;
 	overflow-wrap: anywhere;
+	text-wrap: balance;
 }
 
 p {
 	margin-block: 0 var(--size-3);
+	text-wrap: pretty;
 }
