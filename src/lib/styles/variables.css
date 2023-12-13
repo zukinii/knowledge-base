@@ -18,6 +18,10 @@
 	--bg-1: var(--gray-9);
 	--border-color-1: var(--gray-7);
 
+	/* fonts */
+	--font-family: system-ui, sans-serif;
+	--font-family-mono: ui-monospace, monospace;
+
 	/* animation */
 	--time-default: 0.2s;
 	--transition: var(--time-default) var(--ease-3);
